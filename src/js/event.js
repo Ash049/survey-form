@@ -1,3 +1,4 @@
+window.eventModule = (() => {
 const questionULlist = document.getElementById("question-container")
 const footer = document.getElementById("footer")
 const skipOrContinueButton = document.getElementById("skip-continue-button")
@@ -32,3 +33,7 @@ skipOrContinueButton.addEventListener("click", (e) => {
 const submitButton =  () => {
     console.log("Response", JSON.stringify(response))
 };
+return{
+    submitButton: submitButton
+}
+})();

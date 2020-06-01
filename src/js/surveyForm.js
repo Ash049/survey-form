@@ -3,6 +3,8 @@ window.SurveyModule = (() => {
     let position = 0
     const url = "https://flipkart-survey-mock.now.sh/"
     let surveyQuestionsLength = 0
+    const footer = document.getElementById("footer")
+    const skipOrContinueButton = document.getElementById("skip-continue-button")
 
     const getSurveyQuestions = async () => {
         try {
@@ -72,7 +74,7 @@ window.SurveyModule = (() => {
 
 
             //if (questionDetail.multiSelect === false) {
-                const ulList = questionItem
+                const ulList = window.utilsModule.questionItem
                   (
                     questionDetail.id,
                     questionDetail.options,
@@ -85,7 +87,7 @@ window.SurveyModule = (() => {
         } else {
             if (index === surveyQuestionsLength) {
                 node.innerHTML = "";
-                const submitPage = createSubmitPage();
+                const submitPage = window.utilsModule.createSubmitPage();
                 node.appendChild(submitPage);
             } else {
                 console.log(`Questions detail is not availabe at ${position}`)
